@@ -10,24 +10,10 @@ import Charts
 
 struct CEMainView: View {
     
+    @StateObject private var vm: CEViewModel = CEViewModel()
+    
     @State private var firstCurrency: Currency.ECurrency = .USD
-    @State private var secondCurrency: Currency.ECurrency = .EUR
-    
-    
-    
-    private var currencies: [Currency] = [
-        Currency(name: "United States Dollar", short: "USD", rate: 79.8, day: 1),
-        Currency(name: "Euro", short: "EUR", rate: 89.8, day: 1),
-        Currency(name: "United States Dollar", short: "USD", rate: 80.3, day: 2),
-        Currency(name: "Euro", short: "EUR", rate: 88.8, day: 2),
-        Currency(name: "United States Dollar", short: "USD", rate: 78.3, day: 3),
-        Currency(name: "Euro", short: "EUR", rate: 90.1, day: 3),
-        Currency(name: "United States Dollar", short: "USD", rate: 77.8, day: 4),
-        Currency(name: "Euro", short: "EUR", rate: 89.9, day: 4),
-        Currency(name: "United States Dollar", short: "USD", rate: 76.3, day: 5),
-        Currency(name: "Euro", short: "EUR", rate: 88.8, day: 5)
-    ]
-    
+    @State private var secondCurrency: Currency.ECurrency = .EUR    
     
     var body: some View {
         HSplitView {
@@ -50,7 +36,7 @@ struct CEMainView: View {
             .frame(width: 500)
             .frame(maxHeight: .infinity)
             VStack {
-                Chart(currencies) { currencyRate in
+                Chart(vm.exchangeRates) { currencyRate in
                     LineMark(x: .value("Day", currencyRate.day), y: .value("Rate", currencyRate.rate))
                         .foregroundStyle(by: .value("Currency", currencyRate.short))
                     PointMark(x: .value("Day", currencyRate.day), y: .value("Price", currencyRate.rate))
@@ -73,7 +59,8 @@ struct CEMainView_Previews: PreviewProvider {
 extension CEMainView {
     private var startButton: some View {
         Button {
-
+            vm.inputInitialRate(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
+            vm.startPrediction()
         } label: {
             Text("Start timer")
         }

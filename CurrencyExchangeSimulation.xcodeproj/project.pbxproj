@@ -12,6 +12,7 @@
 		B037F77829AFB99F0016224B /* CEPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F77729AFB99F0016224B /* CEPicker.swift */; };
 		B037F77A29AFB9E30016224B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F77929AFB9E30016224B /* Currency.swift */; };
 		B037F77C29AFBA510016224B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F77B29AFBA510016224B /* Utils.swift */; };
+		B037F77E29AFBDF80016224B /* CEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F77D29AFBDF80016224B /* CEViewModel.swift */; };
 		B0FA1DA729A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA1DA629A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift */; };
 		B0FA1DA929A7BC7200AA44ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA1DA829A7BC7200AA44ED /* ContentView.swift */; };
 		B0FA1DAB29A7BC7300AA44ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FA1DAA29A7BC7300AA44ED /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		B037F77729AFB99F0016224B /* CEPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPicker.swift; sourceTree = "<group>"; };
 		B037F77929AFB9E30016224B /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B037F77B29AFBA510016224B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B037F77D29AFBDF80016224B /* CEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEViewModel.swift; sourceTree = "<group>"; };
 		B0FA1DA329A7BC7200AA44ED /* CurrencyExchangeSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchangeSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FA1DA629A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeSimulationApp.swift; sourceTree = "<group>"; };
 		B0FA1DA829A7BC7200AA44ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		B037F76F29AFB3F40016224B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B037F77D29AFBDF80016224B /* CEViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FA1DA929A7BC7200AA44ED /* ContentView.swift in Sources */,
+				B037F77E29AFBDF80016224B /* CEViewModel.swift in Sources */,
 				B037F77A29AFB9E30016224B /* Currency.swift in Sources */,
 				B037F77229AFB4120016224B /* CEMainView.swift in Sources */,
 				B0FA1DA729A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift in Sources */,

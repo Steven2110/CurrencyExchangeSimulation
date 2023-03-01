@@ -7,6 +7,29 @@
 
 import Foundation
 
+func getCurrencyName(of currency: Currency.ECurrency) -> String {
+    switch currency {
+    case .USD:
+        return "United States Dollar"
+    case .EUR:
+        return "Euro"
+    case .ISK:
+        return "Icelandic Króna"
+    case .NOK:
+        return "Norwegian Krone"
+    case .IDR:
+        return "Indonesian Rupiah"
+    case .JPY:
+        return "Japanese Yen"
+    case .CNY:
+        return "CNY"
+    }
+}
+
+func getCurrencyShort(of currency: Currency.ECurrency) -> String {
+    currency.rawValue
+}
+
 func getInitialPrice(of currency: Currency.ECurrency) -> Double {
     // Initial Price per 1st March
     switch currency {
