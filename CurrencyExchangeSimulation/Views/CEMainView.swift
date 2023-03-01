@@ -92,7 +92,10 @@ extension CEMainView {
     
     private var resetButton: some View {
         Button {
-            
+            isOnGoing = false
+            timer = nil
+            firstLaunch = true
+            vm.reset()
         } label: {
             Text("Reset")
         }

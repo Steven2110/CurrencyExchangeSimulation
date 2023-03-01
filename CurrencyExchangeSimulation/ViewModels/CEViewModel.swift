@@ -79,4 +79,18 @@ final class CEViewModel: ObservableObject {
     private func predictRate(initialPrice: Double) -> Double {
         return initialPrice + initialPrice * k * (Double.random(in: 0...1) - 0.5)
     }
+    
+    func reset() {
+        firstCurrencyName = ""
+        firstCurrencyShort = ""
+        firstCurrencyCurrentRate = 0.0
+        
+        secondCurrencyName = ""
+        secondCurrencyShort = ""
+        secondCurrencyCurrentRate = 0.0
+        
+        day = 1
+        
+        exchangeRates.removeAll()
+    }
 }
