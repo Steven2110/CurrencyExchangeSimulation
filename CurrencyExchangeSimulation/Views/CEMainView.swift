@@ -13,7 +13,10 @@ struct CEMainView: View {
     @StateObject private var vm: CEViewModel = CEViewModel()
     
     @State private var firstCurrency: Currency.ECurrency = .USD
-    @State private var secondCurrency: Currency.ECurrency = .EUR    
+    @State private var secondCurrency: Currency.ECurrency = .EUR
+    
+    @State private var timer: Timer? = nil
+    private let timestep: Double = 1.0
     
     var body: some View {
         HSplitView {
@@ -60,7 +63,10 @@ extension CEMainView {
     private var startButton: some View {
         Button {
             vm.inputInitialRate(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
-            vm.startPrediction()
+            
+            timer = Timer.scheduledTimer(withTimeInterval: timestep, repeats: true) { _ in
+                vm.startPrediction()
+            }
         } label: {
             Text("Start timer")
         }
