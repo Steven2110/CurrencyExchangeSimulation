@@ -18,6 +18,9 @@ struct CEMainView: View {
     @State private var timer: Timer? = nil
     private let timestep: Double = 1.0
     
+    @State private var firstLaunch: Bool = true
+    @State private var isOnGoing: Bool = false
+    
     var body: some View {
         HSplitView {
             VStack(alignment: .leading) {
@@ -62,10 +65,16 @@ struct CEMainView_Previews: PreviewProvider {
 extension CEMainView {
     private var startButton: some View {
         Button {
-            vm.inputInitialRate(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
+            if firstLaunch {
+                vm.inputInitialRate(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
+                firstLaunch = false
+            }
             
-            timer = Timer.scheduledTimer(withTimeInterval: timestep, repeats: true) { _ in
-                vm.startPrediction()
+            if !isOnGoing {
+                timer = Timer.scheduledTimer(withTimeInterval: timestep, repeats: true) { _ in
+                    vm.startPrediction()
+                }
+                isOnGoing = true
             }
         } label: {
             Text("Start timer")
@@ -74,7 +83,8 @@ extension CEMainView {
     
     private var stopButton: some View {
         Button {
-            
+            isOnGoing = false
+            timer?.invalidate()
         } label: {
             Text("Stop timer")
         }
