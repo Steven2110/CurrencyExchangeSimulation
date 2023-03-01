@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B037F77229AFB4120016224B /* CEMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B037F77129AFB4120016224B /* CEMainView.swift */; };
+		B037F77429AFB9270016224B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B037F77329AFB9270016224B /* .gitignore */; };
 		B0FA1DA729A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA1DA629A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift */; };
 		B0FA1DA929A7BC7200AA44ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA1DA829A7BC7200AA44ED /* ContentView.swift */; };
 		B0FA1DAB29A7BC7300AA44ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FA1DAA29A7BC7300AA44ED /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B037F77129AFB4120016224B /* CEMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEMainView.swift; sourceTree = "<group>"; };
+		B037F77329AFB9270016224B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B0FA1DA329A7BC7200AA44ED /* CurrencyExchangeSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchangeSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FA1DA629A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeSimulationApp.swift; sourceTree = "<group>"; };
 		B0FA1DA829A7BC7200AA44ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,9 +39,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B037F76D29AFB3ED0016224B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B037F77129AFB4120016224B /* CEMainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B037F76F29AFB3F40016224B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B037F77029AFB3F80016224B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B0FA1D9A29A7BC7200AA44ED = {
 			isa = PBXGroup;
 			children = (
+				B037F77329AFB9270016224B /* .gitignore */,
 				B0FA1DB529A7BE1B00AA44ED /* README.md */,
 				B0FA1DA529A7BC7200AA44ED /* CurrencyExchangeSimulation */,
 				B0FA1DA429A7BC7200AA44ED /* Products */,
@@ -57,6 +84,9 @@
 			children = (
 				B0FA1DA629A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift */,
 				B0FA1DA829A7BC7200AA44ED /* ContentView.swift */,
+				B037F77029AFB3F80016224B /* Models */,
+				B037F76F29AFB3F40016224B /* ViewModels */,
+				B037F76D29AFB3ED0016224B /* Views */,
 				B0FA1DAA29A7BC7300AA44ED /* Assets.xcassets */,
 				B0FA1DAF29A7BC7300AA44ED /* CurrencyExchangeSimulation.entitlements */,
 				B0FA1DAC29A7BC7300AA44ED /* Preview Content */,
@@ -130,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B037F77429AFB9270016224B /* .gitignore in Resources */,
 				B0FA1DB629A7BE1B00AA44ED /* README.md in Resources */,
 				B0FA1DAE29A7BC7300AA44ED /* Preview Assets.xcassets in Resources */,
 				B0FA1DAB29A7BC7300AA44ED /* Assets.xcassets in Resources */,
@@ -144,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FA1DA929A7BC7200AA44ED /* ContentView.swift in Sources */,
+				B037F77229AFB4120016224B /* CEMainView.swift in Sources */,
 				B0FA1DA729A7BC7200AA44ED /* CurrencyExchangeSimulationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
