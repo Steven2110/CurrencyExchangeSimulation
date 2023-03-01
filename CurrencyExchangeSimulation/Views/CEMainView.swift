@@ -50,7 +50,9 @@ struct CEMainView: View {
                             Text("\(currencyRate.rate, specifier: "%.3f")")
                         }
                         .foregroundStyle(by: .value("Currency", currencyRate.short))
-                }.padding()
+                }
+                .chartXScale(domain: 0...vm.getDomainLength())
+                .padding()
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }

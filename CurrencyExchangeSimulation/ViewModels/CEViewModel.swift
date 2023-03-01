@@ -93,4 +93,8 @@ final class CEViewModel: ObservableObject {
         
         exchangeRates.removeAll()
     }
+    
+    func getDomainLength() -> Int {
+        exchangeRates.count / 2 + 1
+    }
 }
