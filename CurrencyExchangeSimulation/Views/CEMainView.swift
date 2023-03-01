@@ -37,6 +37,29 @@ struct CEMainView: View {
                     stopButton
                     resetButton
                 }
+                Divider()
+                Text("Information center - Day \(vm.getCurrentDay())")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                HStack {
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text("\(getCurrencyName(of: firstCurrency)) - \(getCurrencyShort(of: firstCurrency))").font(.title2)
+                        Text("Initial price: \(getInitialPrice(of: firstCurrency), specifier: "%.3f") RUB")
+                        Text("Current Price: \(vm.getCurrentFirstCurrencyRate(), specifier: "%.3f") RUB")
+                        Text("Current profit: \(vm.getFirstCurrencyProfit(), specifier: "%.3f") RUB")
+                    }
+                }.padding()
+                HStack {
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text("\(getCurrencyName(of: secondCurrency)) - \(getCurrencyShort(of: secondCurrency))").font(.title2)
+                        Text("Initial price: \(getInitialPrice(of: secondCurrency), specifier: "%.3f") RUB")
+                        Text("Current Price: \(vm.getCurrentSecondCurrencyRate(), specifier: "%.3f") RUB")
+                        Text("Current profit: \(vm.getSecondCurrencyProfit(), specifier: "%.3f") RUB")
+                    }
+                }.padding()
             }
             .padding()
             .frame(width: 500)

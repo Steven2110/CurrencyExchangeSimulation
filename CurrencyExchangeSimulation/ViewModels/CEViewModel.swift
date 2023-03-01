@@ -10,10 +10,12 @@ import Foundation
 final class CEViewModel: ObservableObject {
     @Published var exchangeRates: [Currency] = [Currency]()
     
+    private var firstCurrency: Currency.ECurrency = .USD
     private var firstCurrencyName: String = ""
     private var firstCurrencyShort: String = ""
     private var firstCurrencyCurrentRate: Double = 0.0
     
+    private var secondCurrency: Currency.ECurrency = .EUR
     private var secondCurrencyName: String = ""
     private var secondCurrencyShort: String = ""
     private var secondCurrencyCurrentRate: Double = 0.0
@@ -23,6 +25,9 @@ final class CEViewModel: ObservableObject {
     private var k: Double = 0.05
     
     func inputInitialRate(firstCurrency: Currency.ECurrency, secondCurrency: Currency.ECurrency) {
+        self.firstCurrency = firstCurrency
+        self.secondCurrency = secondCurrency
+        
         var firstC: Currency
         var secondC: Currency
         
@@ -80,11 +85,33 @@ final class CEViewModel: ObservableObject {
         return initialPrice + initialPrice * k * (Double.random(in: 0...1) - 0.5)
     }
     
+    func getCurrentDay() -> Int {
+        day
+    }
+    
+    func getCurrentFirstCurrencyRate() -> Double {
+        firstCurrencyCurrentRate
+    }
+    
+    func getCurrentSecondCurrencyRate() -> Double {
+        secondCurrencyCurrentRate
+    }
+    
+    func getFirstCurrencyProfit() -> Double {
+        getCurrentFirstCurrencyRate() - getInitialPrice(of: firstCurrency)
+    }
+    
+    func getSecondCurrencyProfit() -> Double {
+        getCurrentSecondCurrencyRate() - getInitialPrice(of: secondCurrency)
+    }
+    
     func reset() {
+        firstCurrency = .USD
         firstCurrencyName = ""
         firstCurrencyShort = ""
         firstCurrencyCurrentRate = 0.0
         
+        secondCurrency = .EUR
         secondCurrencyName = ""
         secondCurrencyShort = ""
         secondCurrencyCurrentRate = 0.0
