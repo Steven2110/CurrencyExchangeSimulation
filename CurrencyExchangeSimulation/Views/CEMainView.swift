@@ -16,16 +16,16 @@ struct CEMainView: View {
     
     
     private var currencies: [Currency] = [
-        Currency(name: "USD", rate: 79.8, day: 1),
-        Currency(name: "EUR", rate: 89.8, day: 1),
-        Currency(name: "USD", rate: 80.3, day: 2),
-        Currency(name: "EUR", rate: 88.8, day: 2),
-        Currency(name: "USD", rate: 78.3, day: 3),
-        Currency(name: "EUR", rate: 90.1, day: 3),
-        Currency(name: "USD", rate: 77.8, day: 4),
-        Currency(name: "EUR", rate: 89.9, day: 4),
-        Currency(name: "USD", rate: 76.3, day: 5),
-        Currency(name: "EUR", rate: 88.8, day: 5)
+        Currency(name: "United States Dollar", short: "USD", rate: 79.8, day: 1),
+        Currency(name: "Euro", short: "EUR", rate: 89.8, day: 1),
+        Currency(name: "United States Dollar", short: "USD", rate: 80.3, day: 2),
+        Currency(name: "Euro", short: "EUR", rate: 88.8, day: 2),
+        Currency(name: "United States Dollar", short: "USD", rate: 78.3, day: 3),
+        Currency(name: "Euro", short: "EUR", rate: 90.1, day: 3),
+        Currency(name: "United States Dollar", short: "USD", rate: 77.8, day: 4),
+        Currency(name: "Euro", short: "EUR", rate: 89.9, day: 4),
+        Currency(name: "United States Dollar", short: "USD", rate: 76.3, day: 5),
+        Currency(name: "Euro", short: "EUR", rate: 88.8, day: 5)
     ]
     
     
@@ -52,12 +52,12 @@ struct CEMainView: View {
             VStack {
                 Chart(currencies) { currencyRate in
                     LineMark(x: .value("Day", currencyRate.day), y: .value("Rate", currencyRate.rate))
-                        .foregroundStyle(by: .value("Currency", currencyRate.name))
+                        .foregroundStyle(by: .value("Currency", currencyRate.short))
                     PointMark(x: .value("Day", currencyRate.day), y: .value("Price", currencyRate.rate))
                         .annotation {
                             Text("\(currencyRate.rate, specifier: "%.3f")")
                         }
-                        .foregroundStyle(by: .value("Currency", currencyRate.name))
+                        .foregroundStyle(by: .value("Currency", currencyRate.short))
                 }.padding()
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
         }

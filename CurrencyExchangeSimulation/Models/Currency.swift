@@ -10,6 +10,7 @@ import Foundation
 struct Currency: Identifiable {
     let id: UUID = UUID()
     var name: String
+    var short: String
     var rate: Double
     var day: Int
     
